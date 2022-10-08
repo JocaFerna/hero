@@ -1,0 +1,33 @@
+import jdk.internal.org.jline.terminal.Terminal
+import sun.awt.X11.Screen
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'game'
+}
+
+group 'com.up202108044.hero'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass.set("Application")
+}
+
+game {
+    mainClass.set("Game")
+}
